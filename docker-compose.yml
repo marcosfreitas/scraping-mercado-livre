@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+
+  web:
+    image: "node:current"
+    privileged: true
+    tty: true
+    stdin_open: true
+    restart: always
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=devlopment
+    volumes:
+      - ./src/:/home/node/app
+    ports:
+      - "8081:8081"
+    command: "npm run dev"
+    networks:
+      - backend
+
+networks:
+  backend:

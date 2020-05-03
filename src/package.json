@@ -1,0 +1,30 @@
+{
+  "name": "scraping_mercado_livre",
+  "description": "scraping mercado livre's site to search products by keyword with a limit of 51 itens (just first page)",
+  "author": "Marcos Freitas",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "dev": "npm install; nodemon app.js"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "factory-girl": "^5.0.4",
+    "faker": "^4.1.0",
+    "jest": "^25.4.0",
+    "migrate-mongoose": "^4.0.0",
+    "nodemon": "^2.0.2",
+    "sqlite3": "^4.2.0",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "chalk": "^4.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.4.0",
+    "mongoose": "^5.9.6",
+    "scrape-it": "^5.2.3"
+  },
+  "license": "ISC"
+}
