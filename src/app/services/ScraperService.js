@@ -10,6 +10,7 @@ const chalk = require('chalk');
     }
 
     search = async function(req, res) {
+
         let self = this,
             term = req.query.string,
             limit = req.query.limit;
@@ -19,13 +20,18 @@ const chalk = require('chalk');
         }
 
         let response = await scrapIt(`https://lista.mercadolivre.com.br/${term}#D[A:${term}]`, {
+
             items: self.getJSONFormat()
+
+
         }).then(({ data, response }) => {
-           console.log(chalk.yellowBright(`Status Code: ${response.statusCode}`));
+
+           console.log(`Status Code: ${response.statusCode}`);
            return data;
+
         });
 
-        return self.spliceResponse(response, limit);
+        return self.responseSlice(response, limit);
 
     }
 
@@ -71,7 +77,7 @@ const chalk = require('chalk');
         };
     }
 
-    spliceResponse = function(json, limit) {
+    responseSlice = function(json, limit) {
         let extracted_response = [];
 
         Object.keys(json.items).some((element, index, array) => {
